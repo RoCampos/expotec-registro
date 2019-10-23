@@ -36,16 +36,16 @@
 					@csrf
 
 					<span class="login100-form-title p-b-43">
-						Registro de Presença
+						<img src="{{asset('app-assets/images/expotec5.png')}}" style="height: 220px;width: 420px">
 					</span>
 					
-					<div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
+					<div class="wrap-input100 rs1 validate-input" data-validate = "Use sua matrícula">
 						<input class="input100" type="text" name="username">
 						<span class="label-input100">Matrícula Suap</span>
 					</div>
 					
 					
-					<div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 rs2 validate-input" data-validate="Senha do SUAP">
 						<input class="input100" type="password" name="pass">
 						<span class="label-input100">Senha</span>
 					</div>

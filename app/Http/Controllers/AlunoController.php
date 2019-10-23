@@ -75,7 +75,7 @@ class AlunoController extends Controller
 
 			return response()->view('ponto.ponto', 
 				['pontos' => $data['pontos'], 'aluno' => $data['aluno']])
-					->header("Refresh", "15;url=/logout");
+					->header("Refresh", "5;url=/logout");
 
 		} else {
 
@@ -83,7 +83,7 @@ class AlunoController extends Controller
 
 			return response()->view('ponto.ponto', 
 				['pontos' => $data['pontos'], 'aluno' => $data['aluno']])
-				->header("Refresh", "15;url=/logout");
+				->header("Refresh", "5;url=/logout");
 		}
 
 	}
@@ -135,7 +135,10 @@ class AlunoController extends Controller
 		}
 
 		return [
-			'pontos' => Ponto::where('matricula', '=', $aluno->id)->get(),
+			'pontos' => Ponto::where('matricula', '=', $aluno->id)
+					->whereDate('ponto', '=', Carbon::now()->toDateString())
+					->orderBy('ponto', 'desc')
+					->get(),
 			'aluno' => $aluno
 		];
 	}
@@ -168,7 +171,10 @@ class AlunoController extends Controller
 		}
 
 		return [
-			'pontos' => Ponto::where('matricula', '=', $aluno->id)->get(),
+			'pontos' => Ponto::where('matricula', '=', $aluno->id)
+					->whereDate('ponto', '=', Carbon::now()->toDateString())
+					->orderBy('ponto', 'desc')
+					->get(),
 			'aluno' => $aluno
 		];
 	}
