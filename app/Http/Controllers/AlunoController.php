@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Ivmelo\SUAP\SUAP;
 use Carbon\Carbon;
 
-use App\Aluno;
-use App\Ponto;
+use App\Models\Aluno;
+use App\Models\Ponto;
 
 class AlunoController extends Controller
 {

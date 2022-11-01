@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ponto extends Model
+class Aluno extends Model
 {
     //
     /**
@@ -14,7 +14,7 @@ class Ponto extends Model
      */
     public $timestamps = false;
 
-    public function aluno () {
-    	return $this->belongsTo('App\Aluno','id');
+    public function pontos () {
+    	return $this->hasMany('App\Models\Ponto', 'id');
     }
 }
