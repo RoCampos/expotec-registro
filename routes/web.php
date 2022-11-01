@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\AlunoController;
 
-Route::get('home/', 'AlunoController@index')->name('index');
+Route::get('/', [AlunoController::class, 'index'])->name('index');
 
 Route::post('login/', 'AlunoController@login')->name('login');
 
-Route::get('home/registro/', 'AlunoController@mostrar')->name('mostrar');
+Route::get('home/registro', 'AlunoController@mostrar')->name('mostrar');
 
 Route::get('logout/', 'AlunoController@logout')->name('logout');
 
