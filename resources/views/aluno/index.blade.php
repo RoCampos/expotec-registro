@@ -32,22 +32,17 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-b-160 p-t-50">
-				<form class="login100-form validate-form" method="post" action="{{url('login')}}">
+				<form class="login100-form validate-form" method="post" action="{{route('login')}}">
 					@csrf
 
 					<span class="login100-form-title p-b-43">
 						<img src="{{asset('app-assets/images/expotec5.png')}}" style="height: 220px;width: 420px">
 					</span>
 					
-					<div class="wrap-input100 rs1 validate-input" data-validate = "Use sua matrícula">
-						<input class="input100" type="text" name="username">
+					{{-- <div class="wrap-input100 rs1 rs2 validate-input" data-validate = "Use sua matrícula"> --}}
+					<div class="wrap-input100 rs1 rs2 @error('matricula') alert-validate @enderror"  @error('matricula') data-validate={{$message}} @enderror >
+						<input class="input100" type="text" name="matricula">
 						<span class="label-input100">Matrícula Suap</span>
-					</div>
-					
-					
-					<div class="wrap-input100 rs2 validate-input" data-validate="Senha do SUAP">
-						<input class="input100" type="password" name="pass">
-						<span class="label-input100">Senha</span>
 					</div>
 
 					<div class="container-login100-form-btn">

@@ -18,7 +18,7 @@ class CreateAlunosTable extends Migration
             $table->increments('id');
             $table->string('matricula');
             $table->string('nome');
-            $table->string('codigo_curso');
+            $table->string('curso');
             $table->string('turma');
         });
     }

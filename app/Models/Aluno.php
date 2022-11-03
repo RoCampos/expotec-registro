@@ -14,6 +14,13 @@ class Aluno extends Model
      */
     public $timestamps = false;
 
+    protected $fillable = [
+        'matricula', 
+        'nome', 
+        'curso', 
+        'turma',
+    ];
+
     public function pontos () {
     	return $this->hasMany('App\Models\Ponto', 'id');
     }

@@ -13,7 +13,9 @@
         "ivmelo/suap-api-php": "1.0.*",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui":"^3.0"
+        "laravel/ui": "^3.0",
+        "maatwebsite/excel": "^3.1",
+        "psr/simple-cache": "^2.0"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
