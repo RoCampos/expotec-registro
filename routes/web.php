@@ -14,12 +14,7 @@
 use App\Http\Controllers\AlunoController;
 
 Route::get('/', [AlunoController::class, 'index'])->name('index');
+Route::post('register/', [AlunoController::class, 'register'])->name('login');
 
-Route::post('login/', 'AlunoController@login')->name('login');
-
-Route::get('home/registro', 'AlunoController@mostrar')->name('mostrar');
-
-Route::get('logout/', 'AlunoController@logout')->name('logout');
-
-
-
+Route::get('upload/', [AlunoController::class, 'upload'])->name('upload');
+Route::post('import/', [AlunoController::class, 'import'])->name('import');
