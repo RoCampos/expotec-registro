@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Database\Seeders\PontosTableSeeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(PontosTableSeeder::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model
@@ -23,5 +24,17 @@ class Aluno extends Model
 
     public function pontos () {
     	return $this->hasMany('App\Models\Ponto', 'id');
+    }
+
+    public function participacao () {
+        $lista = Ponto::where('matricula', $this->id)->get();
+
+        $dias = array();
+
+        foreach ($lista as $registro) {
+            $data = Carbon::create($registro->ponto);
+            $dias[$data->day] = $data->locale('pt-br')->dayName;
+        }
+        return $dias;
     }
 }
