@@ -63,10 +63,19 @@
 					</div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-						
+							
+							<li class="d-flex list-item">
+								<span class="p-2">Aluno</span>
+								<span class="ml-auto p-2">Turma</span>
+							</li>
                             @foreach($alunos as $aluno) 
-                            <li class="list-item">
-                                <a href="{{route('aluno', ['aluno' => $aluno->id])}}">{{$aluno->nome}}</a>
+                            <li class="d-flex list-item">
+                                <a class="p-2" href="{{route('aluno', ['aluno' => $aluno->id])}}">{{$aluno->nome}}</a>
+								<span class="ml-auto p-2">
+									<a href="{{route('turma', ['turma'=>$aluno->turma])}}">
+										{{$aluno->turma}}
+									</a>
+								</span>
                             </li>
                             @endforeach
                         </ul>

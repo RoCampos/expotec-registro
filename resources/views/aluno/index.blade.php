@@ -76,5 +76,13 @@
 <!--===============================================================================================-->
 	<script src="{{asset('app-assets/js/main.js')}}"></script>
 
+	@if(Session::has('massage'))
+	<script type="text/javascript">	
+		$(document).ready(function(){
+    		alert('{{Session::get('message')}}');
+  		});
+	</script>
+	@endif
+
 </body>
 </html>

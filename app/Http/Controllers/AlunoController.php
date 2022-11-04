@@ -7,7 +7,7 @@ use App\Http\Requests\RegistroRequest;
 use Illuminate\Http\Request;
 use App\Models\Aluno;
 use App\Models\Ponto;
-
+use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -24,16 +24,15 @@ class AlunoController extends Controller
 		//check matrícula
 		$matricula = $request->matricula;
 
-
-		exit;
-
 		//validar o ponto
 		$ponto = new Ponto;
 		$ponto->matricula = Aluno::where('matricula',$matricula)->first()->id;
 		$ponto->ponto = now();
 		$ponto->save();
 
-		return back();
+		Session::flash('massage', 'Registrado com Sucesso!');
+
+		return back()->with('message', 'Registrado com Sucesso!');
 
 	}
 
@@ -74,7 +73,7 @@ class AlunoController extends Controller
 			$key = $request->input('search') . "%";
 			$alunos = Aluno::where('nome', 'like', $key)->simplePaginate(15);
 		} else {
-			$alunos = Aluno::simplePaginate(15, ['id','nome', 'matricula']);
+			$alunos = Aluno::simplePaginate(15);
 		}
 
 		return view ('aluno.alunos', [
