@@ -44,7 +44,7 @@
 				<div class="card text-center border-0" style="width: 60rem">
 					<div>
 						<div class="align-middle">
-							<h1 class="h1">Relatório Invidiual</h1>
+							<h1 class="h1">Relatório Turma</h1>
 						</div>
 						
 					</div>
@@ -56,8 +56,8 @@
 						<div class="d-flex align-items-center">
                             <h3 class="p-2">Turma: {{$turma}}</h3>
                             <span class="ml-auto p-2">
-                                <form class="form" action="#">
-									<button>Relatório</button>
+                                <form class="form" action="{{route('print',['turma'=>$turma])}}">
+									<button class="btn btn-success">Relatório</button>
                                 </form>
                             </span>
                         </div>

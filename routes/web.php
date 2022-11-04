@@ -25,3 +25,5 @@ Route::get('alunos/', [AlunoController::class, 'alunos'])->name('alunos');
 
 Route::get('turmas',[TurmaController::class, 'turmas'])->name('turmas');
 Route::get('turma/{turma}',[TurmaController::class, 'turma'])->name('turma');
+
+Route::get('turma/{turma}/print',[TurmaController::class, 'print'])->name('print');
