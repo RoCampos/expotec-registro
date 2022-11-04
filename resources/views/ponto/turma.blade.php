@@ -56,20 +56,31 @@
 						<div class="d-flex align-items-center">
                             <h3 class="p-2">Turma: {{$turma}}</h3>
                             <span class="ml-auto p-2">
-                                <form class="form" action="{{route('turmas')}}">
-                                    <input class="form-control" type="text" name="search" placeholder="Buscar">
+                                <form class="form" action="#">
+									<button>Relatório</button>
                                 </form>
                             </span>
                         </div>
 					</div>
-
 					<div class="card-body">
 					<ul class="list-group list-group-flush">
+						<li class="d-flex list-item">
+							<span class="p-2">Aluno</span>
+							<span class="ml-auto p-2">Presença</span>
+						</li>
+						<hr>
 						@foreach ($alunos as $aluno)
-						<li>
-                            <a href="{{route('aluno', ['aluno'=>$aluno->id])}}">
+						<li class="d-flex list-item">
+                            <a class="p-2 btn btn-link" href="{{route('aluno', ['aluno'=>$aluno->id])}}">
                                 {{$aluno->nome}}
                             </a>
+							<span class="ml-auto p-2">
+							@foreach(array_values($aluno->participacao()) as $dia)
+							<span class="ml-auto p-2">
+								{{$dia}}
+							</span>
+							@endforeach
+							</span>
 						</li>
 						@endforeach
 					</ul>
