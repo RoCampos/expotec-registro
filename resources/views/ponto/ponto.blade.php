@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Registros </title>
+	<title> Registro Individual </title>
 
-	<title>Login V20</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -41,19 +40,21 @@
 			</div>
 
 			<div class="col-sm" style="margin-top: 25px">
-				<div class="card text-center border-0" style="width: 45rem">
+				<div class="card text-center border-0" style="width: 60rem">
 					<div>
 						<div class="align-middle">
-							<img class="avatar" src={{'https://suap.ifrn.edu.br/'.$aluno->foto}}>
+							<h1 class="h1">Relatório Invidiual</h1>
 						</div>
 						
 					</div>
 				</div>
 
-				<div class="card" style="width: 45rem; margin-top: 15px">
+				<div class="card" style="width: 60rem; margin-top: 15px">
 					
 					<div class="card-header" align="center">
-						<h3>{{$aluno->nome}} - {{$aluno->matricula}}</h3>
+						<h2 class="h2">{{$aluno->nome}} - {{$aluno->matricula}}</h2>
+						<h3 class="h3">Curso: {{$aluno->curso}}</h2>
+						<h3 class="h3">Turma: {{$aluno->turma}}</h2>
 					</div>
 					<ul class="list-group list-group-flush">
 						

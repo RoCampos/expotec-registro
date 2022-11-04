@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+	<title> Registros </title>
+
 	<title>Login V20</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,40 +28,80 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/main.css')}}">
 <!--===============================================================================================-->
+
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-b-160 p-t-50">
-				<form class="login100-form validate-form" method="post" action="{{route('login')}}">
-					@csrf
 
-					<span class="login100-form-title p-b-43">
-						<img src="{{asset('app-assets/images/expotec5.png')}}" style="height: 220px;width: 420px">
-					</span>
-					
-					{{-- <div class="wrap-input100 rs1 rs2 validate-input" data-validate = "Use sua matrícula"> --}}
-					<div class="wrap-input100 rs1 rs2 @error('matricula') alert-validate @enderror"  @error('matricula') data-validate={{$message}} @enderror >
-						<input class="input100" type="text" name="matricula">
-						<span class="label-input100">Matrícula Suap</span>
-					</div>
+	<div class="container">
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Enviar
-						</button>
-					</div>
-				</form>
+		<div class="row">
+			
+			<div class="col-sm">
+				
 			</div>
-		</div>
-	</div>
-	
-	
 
-	
-	
-<!--===============================================================================================-->
+			<div class="col-sm" style="margin-top: 25px">
+				<div class="card text-center border-0" style="width: 45rem">
+					<div>
+						<div class="align-middle">
+							<h1>Alunos</h1>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="card" style="width: 45rem; margin-top: 15px">	
+					<div class="card-header" align="center">
+                        <div class="d-flex align-items-center">
+                            <h3 class="p-2">Listagem</h3>
+                            <span class="ml-auto p-2">
+                                <form class="form" action="{{route('alunos')}}">
+                                    <input class="form-control" type="text" name="search" placeholder="Buscar">
+                                </form>
+                            </span>
+                        </div>
+					</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+							
+							<li class="d-flex list-item">
+								<span class="p-2">Aluno</span>
+								<span class="ml-auto p-2">Turma</span>
+							</li>
+                            @foreach($alunos as $aluno) 
+                            <li class="d-flex list-item">
+                                <a class="p-2" href="{{route('aluno', ['aluno' => $aluno->id])}}">{{$aluno->nome}}</a>
+								<span class="ml-auto p-2">
+									<a href="{{route('turma', ['turma'=>$aluno->turma])}}">
+										{{$aluno->turma}}
+									</a>
+								</span>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="card-bottom" style="margin-bottom: 10px">
+                        <div class="d-flex justify-content-center">
+                            {{$alunos->withQueryString()->links()}}
+                        </div>
+                    </div>
+					
+				</div>
+
+			</div>
+
+			<div class="col-sm">
+				
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+	<!--===============================================================================================-->
 	<script src="{{asset('app-assets/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('app-assets/vendor/animsition/js/animsition.min.js')}}"></script>
@@ -75,14 +117,5 @@
 	<script src="{{asset('app-assets/vendor/countdowntime/countdowntime.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('app-assets/js/main.js')}}"></script>
-
-	@if(Session::has('massage'))
-	<script type="text/javascript">	
-		$(document).ready(function(){
-    		alert('{{Session::get('message')}}');
-  		});
-	</script>
-	@endif
-
 </body>
 </html>
