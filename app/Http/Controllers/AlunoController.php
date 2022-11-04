@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Imports\AlunosImport;
 use App\Http\Requests\RegistroRequest;
+use Illuminate\Http\Request;
 use App\Models\Aluno;
 use App\Models\Ponto;
 
@@ -55,5 +56,31 @@ class AlunoController extends Controller
 		return redirect()->route('index');
 
 	} 
+
+	public function aluno (Request $request, Aluno $aluno) {
+
+		$pontos = Ponto::where('matricula', $aluno->id)->get();
+
+		return view('ponto.ponto', [
+			'aluno'=>$aluno,
+			'pontos'=>$pontos,
+		]);
+
+	}
+
+	public function alunos (Request $request) {
+
+		if ($request->input('search')) {
+			$key = $request->input('search') . "%";
+			$alunos = Aluno::where('nome', 'like', $key)->simplePaginate(15);
+		} else {
+			$alunos = Aluno::simplePaginate(15, ['id','nome', 'matricula']);
+		}
+
+		return view ('aluno.alunos', [
+			'alunos' => $alunos,
+		]);
+
+	}
 
 }

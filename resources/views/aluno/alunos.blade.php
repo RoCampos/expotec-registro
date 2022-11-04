@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Registro Individual </title>
+	<title> Registros </title>
 
+	<title>Login V20</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -40,48 +41,44 @@
 			</div>
 
 			<div class="col-sm" style="margin-top: 25px">
-				<div class="card text-center border-0" style="width: 60rem">
+				<div class="card text-center border-0" style="width: 45rem">
 					<div>
 						<div class="align-middle">
-							<h1 class="h1">Relatório Invidiual</h1>
+							<h1>Alunos</h1>
 						</div>
 						
 					</div>
 				</div>
 
-				<div class="card" style="width: 60rem; margin-top: 15px">
-					
+				<div class="card" style="width: 45rem; margin-top: 15px">	
 					<div class="card-header" align="center">
-						<h2 class="h2">{{$aluno->nome}} - {{$aluno->matricula}}</h2>
-						<h3 class="h3">Curso: {{$aluno->curso}}</h2>
-						<h3 class="h3">Turma: {{$aluno->turma}}</h2>
+                        <div class="d-flex align-items-center">
+                            <h3 class="p-2">Listagem</h3>
+                            <span class="ml-auto p-2">
+                                <form class="form" action="{{route('alunos')}}">
+                                    <input class="form-control" type="text" name="search" placeholder="Buscar">
+                                </form>
+                            </span>
+                        </div>
 					</div>
-					<ul class="list-group list-group-flush">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
 						
-						@for ($i = 0; $i < count($pontos); $i++) 
-
-							@if ($i % 2 == 0)
-
-								<li class="list-group-item">
-									<b>Entrada:</b> {{ 
-										\Carbon\Carbon::parse(
-											$pontos[$i]->ponto
-										)->toTimeString()}}
-								</li>
-							@else 
-
-								<li class="list-group-item">
-									<b>Saída:</b>: {{
-										\Carbon\Carbon::parse(
-											$pontos[$i]->ponto
-										)->toTimeString()}}
-								</li>
-
-							@endif
-						@endfor
-
-					</ul>
+                            @foreach($alunos as $aluno) 
+                            <li class="list-item">
+                                <a href="{{route('aluno', ['aluno' => $aluno->id])}}">{{$aluno->nome}}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="card-bottom" style="margin-bottom: 10px">
+                        <div class="d-flex justify-content-center">
+                            {{$alunos->withQueryString()->links()}}
+                        </div>
+                    </div>
+					
 				</div>
+
 			</div>
 
 			<div class="col-sm">
