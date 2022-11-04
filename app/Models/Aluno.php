@@ -26,6 +26,12 @@ class Aluno extends Model
     	return $this->hasMany('App\Models\Ponto', 'id');
     }
 
+    /**
+     * Função utilizada para contabilizar a partipação do 
+     * alunos
+     * 
+     * 
+     */
     public function participacao () {
         $lista = Ponto::where('matricula', $this->id)->get();
 
@@ -33,7 +39,7 @@ class Aluno extends Model
 
         foreach ($lista as $registro) {
             $data = Carbon::create($registro->ponto);
-            $dias[$data->day] = $data->locale('pt-br')->dayName;
+            $dias[$data->day] = $data->locale('pt-br')->format('d/m');
         }
         return $dias;
     }
