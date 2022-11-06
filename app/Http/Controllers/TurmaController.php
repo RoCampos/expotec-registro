@@ -32,7 +32,12 @@ class TurmaController extends Controller
 
         $alunos = Aluno::where('turma', $turma)->get();
 
-        $pdf = Pdf::loadView('ponto.turma', [
+        // return view('ponto.relatorio', [
+        //     'alunos' => $alunos,
+        //     'turma' => $turma,
+        // ]);
+
+        $pdf = Pdf::loadView('ponto.relatorio', [
             'alunos' => $alunos,
             'turma' => $turma,
         ]);
