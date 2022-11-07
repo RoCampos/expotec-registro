@@ -11,17 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\TurmaController;
+
+Route::get('/', [AlunoController::class, 'index'])->name('index');
+Route::post('register/', [AlunoController::class, 'register'])->name('login');
+
+Route::get('upload/', [AlunoController::class, 'upload'])->name('upload');
+Route::post('import/', [AlunoController::class, 'import'])->name('import');
+
+Route::get('aluno/{aluno}',[AlunoController::class, 'aluno'])->name('aluno');
+Route::get('alunos/', [AlunoController::class, 'alunos'])->name('alunos');
+
+Route::get('turmas',[TurmaController::class, 'turmas'])->name('turmas');
+Route::get('turma/{turma}',[TurmaController::class, 'turma'])->name('turma');
+
+Route::get('turma/{turma}/print',[TurmaController::class, 'print'])->name('print');
+
+Route::get('exemplo', function(){
+
+    return view('ponto.relatorio');
 });
-
-Route::get('home/', 'AlunoController@index')->name('index');
-
-Route::post('login/', 'AlunoController@login')->name('login');
-
-Route::get('home/registro/', 'AlunoController@mostrar')->name('mostrar');
-
-Route::get('logout/', 'AlunoController@logout')->name('logout');
-
-
-
