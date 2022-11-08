@@ -29,7 +29,7 @@
 <!--===============================================================================================-->
 
 </head>
-<body>
+<body style="background: #fffaf0;">
 
 	<div class="container">
 
@@ -42,19 +42,31 @@
 			<div class="col-sm" style="margin-top: 25px">
 				<div class="card text-center border-0" style="width: 60rem">
 					<div>
-						<div class="align-middle">
-							<h1 class="h1">Relatório Invidiual</h1>
-						</div>
+						
+						<span class="login100-form-title p-b-43" style="background: #fffaf0;">
+							<img src="{{asset('app-assets/images/expotec-caico-2022.png')}}" style="height: 150px;width: 600px">
+						</span>
 						
 					</div>
 				</div>
 
 				<div class="card" style="width: 60rem; margin-top: 15px">
 					
-					<div class="card-header" align="center">
-						<h2 class="h2">{{$aluno->nome}} - {{$aluno->matricula}}</h2>
-						<h3 class="h3">Curso: {{$aluno->curso}}</h2>
-						<h3 class="h3">Turma: {{$aluno->turma}}</h2>
+					<div class="card-header" style="background: #E89D26">
+						<div class="row">
+							<div class="col text-center">
+								<h2 class="h3">{{$aluno->nome}} - {{$aluno->matricula}}</h2>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="col">
+								<h3 class="h3">Curso: {{$aluno->curso}}</h2>
+							</div>
+							<div class="col">
+								<h3 class="h3">Turma: {{$aluno->turma}}</h2>
+							</div>
+						</div>
+						
 					</div>
 					<ul class="list-group list-group-flush">
 						

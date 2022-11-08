@@ -30,7 +30,7 @@
 <!--===============================================================================================-->
 
 </head>
-<body>
+<body style="background: #fffaf0;">
 
 	<div class="container">
 
@@ -43,18 +43,18 @@
 			<div class="col-sm" style="margin-top: 25px">
 				<div class="card text-center border-0" style="width: 60rem">
 					<div>
-						<div class="align-middle">
-							<h1 class="h1">Relatório Turma</h1>
-						</div>
+						<span class="login100-form-title p-b-43" style="background: #fffaf0;">
+							<img src="{{asset('app-assets/images/expotec-caico-2022.png')}}" style="height: 150px;width: 600px">
+						</span>
 						
 					</div>
 				</div>
 
 				<div class="card" style="width: 60rem; margin-top: 15px">
 					
-					<div class="card-header" align="center">
+					<div class="card-header" align="center" style="background: #E89D26">
 						<div class="d-flex align-items-center">
-                            <h3 class="p-2">Turma: {{$turma}}</h3>
+                            <h2 class="p-2">Turma: {{$turma}}</h2>
                             <span class="ml-auto p-2">
                                 <form class="form" action="{{route('print',['turma'=>$turma])}}">
 									<button class="btn btn-success">Relatório</button>
@@ -65,18 +65,18 @@
 					<div class="card-body">
 					<ul class="list-group list-group-flush">
 						<li class="d-flex list-item">
-							<span class="p-2">Aluno</span>
-							<span class="ml-auto p-2">Presença</span>
+							<span class="p-2"  style="color: #E89D26;">Aluno</span>
+							<span class="ml-auto p-2" style="color: #E89D26;">Presença</span>
 						</li>
 						<hr>
 						@foreach ($alunos as $aluno)
 						<li class="d-flex list-item">
-                            <a class="p-2 btn btn-link" href="{{route('aluno', ['aluno'=>$aluno->id])}}">
+                            <a class="p-1" href="{{route('aluno', ['aluno'=>$aluno->id])}}">
                                 {{$aluno->nome}}
                             </a>
-							<span class="ml-auto p-2">
+							<span class="ml-auto p-1">
 							@foreach(array_values($aluno->participacao()) as $dia)
-							<span class="ml-auto p-2">
+							<span class="ml-auto p-1">
 								{{$dia}}
 							</span>
 							@endforeach
