@@ -11,7 +11,6 @@
         "php": "^7.2|^8.0",
         "barryvdh/laravel-dompdf": "^2.0",
         "fideloper/proxy": "^4.0",
-        "ivmelo/suap-api-php": "1.0.*",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
@@ -19,11 +18,12 @@
         "psr/simple-cache": "^2.0"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^1.0",
         "fzaninotto/faker": "^1.4",
+        "laravel/breeze": "^1.14",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "spatie/laravel-ignition": "^1.0"
     },
     "config": {
         "optimize-autoloader": true,

@@ -14,6 +14,10 @@
 use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\TurmaController;
 
+Route::get('welcome', function (){
+    return view('welcome');
+});
+
 Route::get('/', [AlunoController::class, 'index'])->name('index');
 Route::post('register/', [AlunoController::class, 'register'])->name('login');
 
@@ -28,6 +32,5 @@ Route::get('turma/{turma}',[TurmaController::class, 'turma'])->name('turma');
 
 Route::get('turma/{turma}/print',[TurmaController::class, 'print'])->name('print');
 
-Route::get('welcome', function (){
-    return view('welcome');
-});
+require 'auth.php';
+
