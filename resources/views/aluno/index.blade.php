@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V20</title>
+	<title>Expotec 2022</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -36,7 +36,7 @@
 					@csrf
 
 					<span class="login100-form-title p-b-43">
-						<img src="{{asset('app-assets/images/expotec5.png')}}" style="height: 220px;width: 420px">
+						<img src="{{asset('app-assets/images/expotec-caico-2022.png')}}" style="height: 150px;width: 600px">
 					</span>
 					
 					{{-- <div class="wrap-input100 rs1 rs2 validate-input" data-validate = "Use sua matrícula"> --}}

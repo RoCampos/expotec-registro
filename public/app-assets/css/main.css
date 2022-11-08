@@ -51,7 +51,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #fff;
+  color: #E89D26;  
 }
 
 /*---------------------------------------------*/
@@ -308,6 +308,11 @@ input.input100 {
   justify-content: center;
 }
 
+.btn-success {
+  background-color: #0E4F77;
+  border: #0E4F77
+}
+
 .login100-form-btn {
   font-family: OpenSans-Bold;
   font-size: 15px;
@@ -328,7 +333,7 @@ input.input100 {
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   overflow: hidden;
-  background: #111111;
+  background: #EAA639;
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -347,11 +352,11 @@ input.input100 {
   height: 100%;
   opacity: 0;
 
-  background: #2575fc;
-  background: -webkit-linear-gradient(right, #6a11cb, #2575fc);
-  background: -o-linear-gradient(right, #6a11cb, #2575fc);
-  background: -moz-linear-gradient(right, #6a11cb, #2575fc);
-  background: linear-gradient(right, #6a11cb, #2575fc);
+  background: #235E82;
+  background: -webkit-linear-gradient(right, #6a11cb, #235E82);
+  background: -o-linear-gradient(right, #6a11cb, #235E82);
+  background: -moz-linear-gradient(right, #6a11cb, #235E82);
+  background: linear-gradient(right, #6a11cb, #235E82);
 
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
