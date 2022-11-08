@@ -14,6 +14,11 @@ use Maatwebsite\Excel\Facades\Excel;
 class AlunoController extends Controller
 {
     
+	public function __construct()
+	{
+		$this->middleware(['auth'])->except('index', 'register');
+	}
+
 	public function index()
 	{
 		return view('aluno.index');

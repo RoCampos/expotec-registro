@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login - Expotec 2022</title>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
 	<title>Expotec 2022</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,11 +50,16 @@
 					</span>
 					
 					{{-- <div class="wrap-input100 rs1 rs2 validate-input" data-validate = "Use sua matrícula"> --}}
-					<div class="wrap-input rs1 rs2 @error('matricula') alert-validate @enderror"  @error('matricula') data-validate={{$message}} @enderror >
-						<input class="input100" type="text" name="matricula">
-						<span class="label-input100">Matrícula Suap</span>
+					<div class="wrap-input50 rs1 @error('email') alert-validate @enderror"  @error('email') data-validate={{$message}} @enderror>
+						<input class="input100" type="text" name="email">
+						<span class="label-input100">Email</span>
+                        
 					</div>
-
+                    <div class="wrap-input50 rs2 @error('email') alert-validate @enderror"  @error('email') data-validate={{$message}} @enderror>
+                        <input type="text" class="input100" name="password">
+                        <span class="label-input100">Senha</span>
+                    </div>
+                    
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Enviar
@@ -84,5 +99,8 @@
 	</script>
 	@endif
 
+</body>
+</html>
+    
 </body>
 </html>
