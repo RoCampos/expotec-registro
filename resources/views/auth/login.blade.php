@@ -56,7 +56,7 @@
                         
 					</div>
                     <div class="wrap-input50 rs2 @error('email') alert-validate @enderror"  @error('email') data-validate={{$message}} @enderror>
-                        <input type="text" class="input100" name="password">
+                        <input type="password" class="input100" name="password">
                         <span class="label-input100">Senha</span>
                     </div>
                     

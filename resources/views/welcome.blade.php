@@ -58,6 +58,16 @@
                 text-transform: uppercase;
             }
 
+            .link {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -68,7 +78,10 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                        <form action="{{url('/logout')}}" method="POST">
+                            @csrf
+                            <button class="link" style="background: none; border:none">Sair</button>
+                        </form>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

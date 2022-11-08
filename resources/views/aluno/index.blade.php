@@ -40,7 +40,7 @@
 					</span>
 					
 					{{-- <div class="wrap-input100 rs1 rs2 validate-input" data-validate = "Use sua matrícula"> --}}
-					<div class="wrap-input rs1 rs2 @error('matricula') alert-validate @enderror"  @error('matricula') data-validate={{$message}} @enderror >
+					<div class="wrap-input100 rs1 rs2 @error('matricula') alert-validate @enderror"  @error('matricula') data-validate={{$message}} @enderror >
 						<input class="input100" type="text" name="matricula">
 						<span class="label-input100">Matrícula Suap</span>
 					</div>
